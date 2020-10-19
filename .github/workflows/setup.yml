@@ -34,7 +34,7 @@ jobs:
       
       - name: Run script
         run: |
-          Rscript -e "/R/pull_covidnp_data.R"
+          Rscript -e  R/pull_covidnp_data.R
       - name: commit
         env:
          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}} 
