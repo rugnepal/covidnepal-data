@@ -1,6 +1,8 @@
 library(dplyr)
 library(tidyr)
 library(jsonlite)
+library(purrr)
+
 
 # read remote json
 nepal_url <- "https://nepalcorona.info/api/v1/data/nepal"
