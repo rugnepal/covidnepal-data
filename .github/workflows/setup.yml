@@ -29,7 +29,7 @@ jobs:
 
       - name: Install R Packages
         run: |
-          Rscript -e 'options(Ncpus = 2); pkgs = c("pacman", "dplyr",", "tidyr", "jsonlite", "purrr"); 
+          Rscript -e 'options(Ncpus = 2); pkgs = c("pacman", "dplyr", "tidyr", "jsonlite", "purrr"); 
           if(length(new.pkgs <- setdiff(pkgs, rownames(installed.packages())))) install.packages(new.pkgs, dependencies=T)'
       
       - name: Run script
