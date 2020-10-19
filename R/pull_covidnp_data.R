@@ -20,8 +20,7 @@ nepal_data <- nepal_data %>%
                values_to = "counts"
   )
 
-
-readr::write_csv(nepal_data, "./data/nepal_data.csv")
+saveRDS(nepal_data, "./data/nepal_data.Rds")
 
 # covid nepal
 
@@ -44,4 +43,4 @@ province_val[is.na(province_val)] <- 0
 names(province_val) <- c("P_ID", "infected", "active", "recovered", "deaths")
 
 
-readr::write_csv(province_val, "./data/province_val.csv")
+saveRDS(province_val, "./data/province_val.Rds")
