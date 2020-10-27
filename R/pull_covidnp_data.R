@@ -1,7 +1,5 @@
-library(dplyr)
-library(tidyr)
+library(tidyverse)
 library(jsonlite)
-library(purrr)
 
 
 # read remote json
@@ -13,11 +11,11 @@ nepal_data <- nepal_data %>%
   as.data.frame(stringsAsFactors = F) %>%
   purrr::map_if(is.data.frame, list) %>%
   as_tibble() %>%
-  select_if(is.numeric) %>%
+  dplyr::select_if(is.numeric) %>%
   janitor::clean_names()
 
 nepal_data <- nepal_data %>%
-  pivot_longer(cols = 1:11,
+  tidyr::pivot_longer(cols = 1:11,
                names_to = "description",
                values_to = "counts"
   )
