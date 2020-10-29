@@ -4,7 +4,7 @@ on:
       - master
 
   schedule:
-    # auto run after every 3 hours every day
+    # auto run after every 12 hours every day
     - cron:  '0 */12 * * *'
 
 
@@ -29,7 +29,7 @@ jobs:
 
       - name: Install R Packages
         run: |
-          Rscript -e 'options(Ncpus = 2); pkgs = c("pacman", "dplyr", "tidyr", "jsonlite", "purrr"); 
+          Rscript -e 'options(Ncpus = 2); pkgs = c("pacman", "tidyverse", "jsonlite", "janitor"); 
           if(length(new.pkgs <- setdiff(pkgs, rownames(installed.packages())))) install.packages(new.pkgs, dependencies=T)'
       
       - name: Run script
